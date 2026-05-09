@@ -23,7 +23,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: 开始构建
-        run: ./gradlew build
+        run: bash ./gradlew build
 
       - name: 上传构建文件
         uses: actions/upload-artifact@v4
