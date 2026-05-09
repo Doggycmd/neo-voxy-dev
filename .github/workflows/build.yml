@@ -17,13 +17,16 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: 17
+          java-version: 21
+      
+      - name: 设置 Gradle
+        uses: gradle/actions/setup-gradle@v4
 
       - name: 添加 gradlew 权限
         run: chmod +x gradlew
 
       - name: 开始构建
-        run: bash ./gradlew build
+        run: bash ./gradlew build --no-daemon
 
       - name: 上传构建文件
         uses: actions/upload-artifact@v4
